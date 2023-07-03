@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+
+body{
+    background-color: #f7f9fd;
+}
+
+
+.list{
+    background-color: aqua;
+    padding: 2em 1.2em;
+    border-radius: 0.6em;
+}
+ 
+ .showERROR{
+    opacity: 1;
+
+ }
+
+ .error{
+    opacity: 0;
+    color: #000000;
+
+ }
+
+ #how_to_use{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+ }
