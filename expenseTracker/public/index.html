@@ -1,95 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Expense Manager</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
- <link rel="stylesheet" href="index.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                        <a href="#" class="navbar-brand">
-                                Expsense Tracker
-                        </a>
-                        <ul class="navbar-nav">
-                                <li class="nav-item"><a href="#how_to_use" class="nav-link">How to use</a></li>
-
-                        </ul>        
-                </div>
-        </nav>
-        <div class="container">
-                        <!--budget-->
-                        <div class="row">
-                                <div class="col-md-6">
-                                        <div class=" d-flex justify-content-center flex-column mt-3 p-2">
-                                                <h3 class="m-1 p-2">Budget</h3>
-                                                <!--budget input-->
-                                                <input type="number" id="total-budget" class="form-control m-2 p-1" placeholder="enter total amount">
-                                                 <buton class="btn btn-primary m-2" id="total-amount-button">Set Budget</buton>
-                                        </div>                
-                                </div>
-                                <div class="col-md-6">
-                                        <canvas id="BudgetChart"></canvas>
-                                </div>
-                        </div>
-                        <hr>
-                        <div class="user-amount-container d-flex justify-content-evenly flex-column mt-3 p-2">
-                                <h3 class="m-1 p-2">Expenses</h3>
-                                <input type="text" class="product-title form-control m-2 p-1" id="product-title" placeholder="enter title of the product">
-                                <input type="number" class="product-cost form-control m-2 p-1" id="expense_value" placeholder="enter cost of the product">
-                                <buton class="btn btn-primary m-2" id="check-amount">check amount</buton>
-
-                        </div>
-                        <!--output-->
-                        <div class="output-container d-flex justify-content-evenly mt-2 p-3 bg-info rounded-3 shadow">
-                                <div>
-                                        <p>Total Budget</p>
-                                        <h4 id="amount">0</h4>
-                                </div>
-                                <div>
-                                        <p>Expenses</p>
-                                        <h3 id="expense_display">0</h3>
-                                </div>
-                                <div>
-                                        <p>Total Expense</p>
-                                        <h3 id="total_expense">0</h3>
-
-                                </div>
-                                <div>
-                                        <p>Remaining Budget</p>
-                                        <h3 id="Remaining_budget">0</h3>
-                                </div>
-
-
-                        </div>
-                <h3 class="mt-2 p-2">Monthly Expenses</h3>
-                <h3 id="date"></h3>
-                <ul id="expsenseList" class="pb-4 d-flex justify-content-center align-items-center flex-column" style="list-style: none;"></ul>                
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        Expense Tracker
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#how_to_use" class="nav-link">How to use</a></li>
+      </ul>        
+    </div>
+  </nav>
+  <div class="container">
+    <!--budget-->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="d-flex justify-content-center flex-column mt-3 p-2">
+          <h3 class="m-1 p-2">Budget</h3>
+          <!--budget input-->
+          <input type="number" id="total-budget" class="form-control m-2 p-1" placeholder="enter total amount">
+          <button class="btn btn-primary m-2" id="total-amount-button">Set Budget</button>
+        </div>                
+      </div>
+      <div class="col-md-6">
+        <canvas id="BudgetChart" class="h-100 w-100"></canvas>
+      </div>
+    </div>
+    <hr>
+    <div class="user-amount-container d-flex justify-content-evenly flex-column mt-3 p-2">
+      <h3 class="m-1 p-2">Expenses</h3>
+      <input type="text" class="product-title form-control m-2 p-1" id="product-title" placeholder="enter title of the product">
+      <input type="number" class="product-cost form-control m-2 p-1" id="expense_value" placeholder="enter cost of the product">
+      <button class="btn btn-primary m-2" id="check-amount">Check Amount</button>
+    </div>
+    <!--output-->
+    <div class="output-container d-flex justify-content-evenly mt-2 p-3 bg-info rounded-3 shadow">
+      <div>
+        <p>Total Budget</p>
+        <h4 id="amount">0</h4>
+      </div>
+      <div>
+        <p>Expenses</p>
+        <h3 id="expense_display">0</h3>
+      </div>
+      <div>
+        <p>Total Expense</p>
+        <h3 id="total_expense">0</h3>
+      </div>
+      <div>
+        <p>Remaining Budget</p>
+        <h3 id="Remaining_budget">0</h3>
+      </div>
+    </div>
+    
+  <div class="container">
+        <div class="row">
+                <div class="col-md-12">
 
                 </div>
-                 <!--documentation-->
-                 <section id="how_to_use" class="pt-5 m-3">
-                        <div class="container">                        
-                                <h2>How to use Expsense Tracker</h2>
-                                <p>First add your current budget in the budget input , then go and add the name of the product that you spend money on and the price </p>
-                                <p>after you add all the necessary data click the check amount button , after you click the button you will see alist with the name of the product and the price you previously added and the ballance of your budget or what is left from your budget after the expsense </p>
-                                <p>if you want to use again the expsense tracker copy and paste the ballance as your new budget and fill again all the inputs and click the check amount button to see the results</p>
-                                <h2>Created by vaggelis tzimas</h2>
-                                <a href="https://www.instagram.com/vagellis.dev/"><i class="bi bi-instagram"></i></a>
-                                <a href="https://web.facebook.com/vaggelis.tzimas.1/"><i class="bi bi-facebook"></i></a>
-                                <a href="https://github.com/Vaggtzm"><i class="bi bi-github"></i></a>
-                        </div>
-                 </section>
-        <script src="index.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+        </div>
+  </div>
+  <!--documentation-->
+  <section id="how_to_use" class="pt-5 m-3">
+    <div class="container">                        
+      <h2>How to use Expense Tracker</h2>
+      <p>First add your current budget in the budget input, then go and add the name of the product that you spend money on and the price.</p>
+      <p>After you add all the necessary data, click the "Check Amount" button. After clicking the button, you will see a list with the name of the product, the price you previously added, and the balance of your budget or what is left from your budget after the expense.</p>
+      <p>If you want to use the Expense Tracker again, copy and paste the balance as your new budget and fill in the inputs again. Click the "Check Amount" button to see the results.</p>
+      <h2>Created by Vaggelis Tzimas</h2>
+      <a href="https://www.instagram.com/vagellis.dev/"><i class="bi bi-instagram"></i></a>
+      <a href="https://web.facebook.com/vaggelis.tzimas.1/"><i class="bi bi-facebook"></i></a>
+      <a href="https://github.com/Vaggtzm"><i class="bi bi-github"></i></a>
+    </div>
+  </section>
+  <script src="index.js"></script>
+  <!--chart js library-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
