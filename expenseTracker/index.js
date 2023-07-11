@@ -1,51 +1,51 @@
+//set new budget function 
+
+//get the set budget button
+ const setBudgetButton = document.getElementById('total-amount-button');
+
+ setBudgetButton.addEventListener('click' , ()=> {
+     //get the budget input 
+     const budgetInput = document.getElementById('total-budget');
+     const Newbudget = budgetInput.value;
+    //print the expense
+    let budgetDisplay = document.getElementById('amount');
+    budgetDisplay.innerText = Newbudget;
+ });
 
 
-//input data for the set buget form 
+ //set new expense value and calculate the remaining budget 
 
-const totalAmount = document.getElementById('total-amount');
-
-//expense data for the expsense form 
-
-
-//buttons
-
-let setBugetButton = document.getElementById('total-amount-button');
-let checkAmountButton = document.getElementById("check-amount");
-
-//output display 
-
-
-//set budget function 
-setBugetButton.addEventListener('click' , ()=>{
-  const balance = document.getElementById('balance-amount');
-
-  //add new budget 
-  const NewBudget = totalAmount.value;
-  amount.innerText =  totalAmount.value;
-  //error
-
-})
-
-//expsense and ballance calculations
-  checkAmountButton.addEventListener('click', () => {
-    //variables
-    const product_cost = document.getElementById('product_cost');
-    const productTitle = document.getElementById("product-title");
-    const expenditure = document.getElementById('expenditure-value');
-    const amount = document.getElementById('amount');
-    const balance = document.getElementById('balance-amount');
-
-    // Print the expenditure
-    const newExpenditure = parseFloat(product_cost.value);
-    expenditure.innerText = newExpenditure;
-    // Calculate the balance
-    const newBallance = parseFloat(newExpenditure);
-    const NewAmount = parseFloat(amount.innerText);
-    console.log(NewAmount - newExpenditure);
-    balance.innerText = (NewAmount - newExpenditure);
-    //print the expsenses
-     const expsenseList = document.getElementById('expsenseList');
-     const listItem = document.createElement('li');
-     listItem.innerText = `${productTitle.value}: $${product_cost.value}`;
-     expsenseList.appendChild(listItem);
-  });
+ //get the expense  button 
+ const ExpenseButton = document.getElementById('check-amount');
+ // event listener for the expense button
+ ExpenseButton.addEventListener('click', () => {
+   // get the expense input
+   const productCost = document.getElementById('expense_value');
+   // get the expenditure display
+   let expenseDisplay = document.getElementById('expense_display');
+   // read the value of the expense input
+   const newExpense = productCost.value;
+   // then update the expenditure display
+   expenseDisplay.innerText = newExpense;
+ 
+   // calculate the remaining budget and total expense
+   // get the remaining budget display
+   const RemainingBudget = document.getElementById('Remaining_budget');
+   // get the budget display
+   const TotalBudget = document.getElementById('amount');
+   // perform the subtraction
+   if (RemainingBudget.innerText > 0) {
+     RemainingBudget.innerText = parseFloat(RemainingBudget.innerText) - parseFloat(productCost.value);
+   } else {
+     RemainingBudget.innerText = TotalBudget.innerText - newExpense;
+   }
+ 
+   // calculate the total expense
+   const expenseFull = document.getElementById('total_expense');
+   expenseFull.innerText = parseFloat(expenseDisplay.innerText) + parseFloat(productCost.value);
+ 
+   // console checks
+   console.log(productCost.value);
+   console.log(RemainingBudget.innerText);
+   console.log(parseFloat(RemainingBudget.innerText) - parseFloat(productCost.value));
+ });
