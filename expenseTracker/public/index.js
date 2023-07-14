@@ -11,47 +11,7 @@
     let budgetDisplay = document.getElementById('amount');
     budgetDisplay.innerText = Newbudget;
  });
- //display the expenses and budget to chart 
- function updateChart(budgetDisplay) {
-  const CurrentBudget = document.querySelector(".budget")
-  const budget = parseFloat(CurrentBudget.innerText);
-  const expenseDisplay = document.querySelector(".expense_display");
-  const expense = parseFloat(expenseDisplay.innerText);
-  const  budgetRemain = document.querySelector(".remaininng_budget") 
-  const Remain = parseFloat(budgetRemain.innerText);
-  const expenseTotal = document.querySelector(".total_expense");
-  const ExpenditureTotal = parseFloat(expenseTotal.innerText)
-  const budgetCanvas = document.getElementById('BudgetChart');
-  const chart = new Chart(budgetCanvas, {
-    type: 'bar',
-    data: {
-      labels: ['Current Budget', 'Expenses', 'Remaining Budget' , 'Total expense'],
-      datasets: [{
-        label: 'Expense Chart',
-        data: [budget, expense , Remain , ExpenditureTotal],
-        backgroundColor: [
-          'rgba(54, 162, 235, 0.5)', // Current budget bar color
-          'rgba(255, 99, 132, 0.5)', // Expenses bar color
-          'rgba(54, 162, 235, 0.5)', // remaining  budget bar color
-          'rgba(54, 162, 235, 0.5)', // total expense   bar color
 
-        ],
-        borderColor: [
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 99, 132, 1)',
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-}
 // Set initial total expense to 0
 let totalExpense = 0;
 
@@ -100,13 +60,11 @@ expenseButton.addEventListener('click', () => {
       const listItem = document.createElement('li');
       listItem.innerText = `${productTitle.value}: $${productCost.value}`;
       expsenseList.appendChild(listItem);
-  // Call the function to update the chart
-  updateChart();
-
        // Console checks
   console.log(productCost.value);
   console.log(remainingBudget.innerText);
   console.log(parseFloat(remainingBudget.innerText) - newExpense);
 
   });
+
 
