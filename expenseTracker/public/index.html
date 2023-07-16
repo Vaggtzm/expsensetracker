@@ -19,54 +19,74 @@
         <li class="nav-item"><a href="#how_to_use" class="nav-link">How to use</a></li>
       </ul>        
     </div>
-  </nav>
+  </nav>      
+
   <div class="container">
     <!--budget-->
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="d-flex justify-content-center flex-column mt-3 p-2">
           <h3 class="m-1 p-2">Budget</h3>
           <!--budget input-->
           <input type="number" id="total-budget" class="form-control m-2 p-1" placeholder="enter total amount">
           <button class="btn btn-primary m-2" id="total-amount-button">Set Budget</button>
-          <p id="custom-alert" class="alert">Value cannot be empty!</p>
+          <p id="custom-alert" class="alertBudget">Value cannot be empty!</p>
         </div>                
       </div>
-      <div class="col-md-6 d-flex justify-content-center flex-column">
+      <!--expense input-->
+      <div class="col-md-12">
+        <div class="user-amount-container d-flex justify-content-evenly flex-column mt-3 p-2">
+          <h3 class="m-1 p-2">Expenses</h3>
+          <label for="product" class="text-muted m-1">Product Title</label>
+          <input type="text" class="product-title form-control m-2 p-1" id="product-title" placeholder="enter title of the product">
+          <label for="Descipriton" class="text-muted m-1">Description</label>
+          <textarea id="product-description" cols="30" rows="10"></textarea>
+          <label for="Product Cost" class="text-muted m-1">Product Cost</label>
+          <input type="number" class="product-cost form-control m-2 p-1" id="expense_value" placeholder="enter cost of the product">
+          <button class="btn btn-primary m-2" id="check-amount">Check Amount</button>
+    
+        </div>
+      </div>
+      <div class="col-md-12">
+      <div class="output-container d-flex justify-content-evenly mt-2 p-3 bg-info rounded-3 shadow">
+        <div>
+          <p>Total Budget</p>
+          <h4 id="amount" class="budget">0</h4>
+        </div>
+        <div>
+          <p>Expenses</p>
+          <h3 id="expense_display" class="expense_display">0</h3>
+        </div>
+        <div>
+          <p>Total Expense</p>
+          <h3 id="total_expense" class="total_expense">0</h3>
+        </div>
+        <div>
+          <p>Remaining Budget</p>
+          <h3 id="Remaining_budget" class="remaininng_budget">0</h3>
+        </div>
+      </div> 
+
+      </div>
+     
+      <div class="col-md-12  m-2 p-3">
         <h3 class="text-start">Expense List</h3>
-        <ul id="expsenseList" class=" navbar-nav  text-start"></ul>                
+        <table id="product-table" class="table table-dark table-striped w-100">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody id="product-list"></tbody>
+        </table>
       </div>
 
-    </div>
-    <hr>
-    <div class="user-amount-container d-flex justify-content-evenly flex-column mt-3 p-2">
-      <h3 class="m-1 p-2">Expenses</h3>
-      <input type="text" class="product-title form-control m-2 p-1" id="product-title" placeholder="enter title of the product">
-      
-      <input type="number" class="product-cost form-control m-2 p-1" id="expense_value" placeholder="enter cost of the product">
-      <button class="btn btn-primary m-2" id="check-amount">Check Amount</button>
-      
-    </div>
-    <!--output-->
-    <div class="output-container d-flex justify-content-evenly mt-2 p-3 bg-info rounded-3 shadow">
-      <div>
-        <p>Total Budget</p>
-        <h4 id="amount" class="budget">0</h4>
-      </div>
-      <div>
-        <p>Expenses</p>
-        <h3 id="expense_display" class="expense_display">0</h3>
-      </div>
-      <div>
-        <p>Total Expense</p>
-        <h3 id="total_expense" class="total_expense">0</h3>
-      </div>
-      <div>
-        <p>Remaining Budget</p>
-        <h3 id="Remaining_budget" class="remaininng_budget">0</h3>
-      </div>
-    </div>
     
+    </div>
+  </div>  
+    <hr>
   <script src="index.js"></script>
   <!--validation-->
   <script src="errors.js"></script>

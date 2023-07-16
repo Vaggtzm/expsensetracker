@@ -52,19 +52,36 @@ expenseButton.addEventListener('click', () => {
   // Update the total expense display
   const expenseFull = document.getElementById('total_expense');
   expenseFull.innerText = totalExpense;
-  //get the product title
-  const productTitle = document.getElementById('product-title');
-  //print the expense list 
-    
-      const expsenseList = document.getElementById('expsenseList');
-      const listItem = document.createElement('li');
-      listItem.innerText = `${productTitle.value}: $${productCost.value}`;
-      expsenseList.appendChild(listItem);
-       // Console checks
-  console.log(productCost.value);
-  console.log(remainingBudget.innerText);
-  console.log(parseFloat(remainingBudget.innerText) - newExpense);
 
+  // Get the product title
+const productTitle = document.getElementById('product-title');
+
+// Get the product description
+const productDescription = document.getElementById('product-description');
+
+// Get the product table body
+const productList = document.getElementById('product-list');
+
+// Create a new table row
+const row = document.createElement('tr');
+
+// Create table cells for title, description, and cost
+const titleCell = document.createElement('td');
+titleCell.innerText = productTitle.value;
+
+const descriptionCell = document.createElement('td');
+descriptionCell.innerText = productDescription.value;
+
+const costCell = document.createElement('td');
+costCell.innerText = `$${productCost.value}`;
+
+// Append the cells to the row
+row.appendChild(titleCell);
+row.appendChild(descriptionCell);
+row.appendChild(costCell);
+
+// Append the row to the table body
+productList.appendChild(row);
   });
 
 

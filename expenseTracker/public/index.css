@@ -13,16 +13,16 @@ body{
      color: white;
  }
 
-#expsenseList{
+#list{
     background-color:#333;
     color: white;
     padding: 1rem;
-    max-height: 300px; /* Adjust the height as per your design */
+    max-height: 100px; /* Adjust the height as per your design */
     overflow-y: auto;
 
 }
 /*css alert*/
-.alert {
+.alertBudget {
     background-color: #ff0000;
     color: #ffffff;
     padding: 10px;
