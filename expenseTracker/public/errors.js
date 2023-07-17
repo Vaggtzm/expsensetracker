@@ -2,6 +2,12 @@
 
 //get the set budget button 
 const BudgetButton = document.getElementById('total-amount-button');
+//get the modal 
+let modal = document.getElementById('budgetModal');
+//get the modal close btn 
+let CloseBtn = document.getElementById('closeBtn');
+
+//event listener for the setbudgetButton 
 
 setBudgetButton.addEventListener('click', () => {
     // Get the budget input
@@ -10,13 +16,18 @@ setBudgetButton.addEventListener('click', () => {
     // Perform the validation
     const budgetValue = parseFloat(BudgetInput.value);
     if (budgetValue === 0 || isNaN(budgetValue)) {
-        const customAlert = document.querySelector('.alertBudget');
-        customAlert.style.display = 'block'; // Show the custom alert
+        modal.style.display = 'block'; //show the modal 
     }else{
-        customAlert.style.display = 'none'; // Show the custom alert
+        modal.style.display = 'none'; //hide the modal 
 
     }
 });
+
+
+CloseBtn.addEventListener('click' , ()=> {
+    modal.style.display = "none";
+});
+
 
 //get the set amount button 
 
@@ -27,14 +38,12 @@ CheckAmountButton.addEventListener('click', ()=>{
     const ProductCost_input = document.getElementById("product-title");
     const ExpenseValue = document.getElementById('expense_value');
 
-    //perform the validation for the product cost
+    ///perform the validation for the product cost
     expenseNumber = parseFloat(ExpenseValue.value);
-    if(expenseNumber === 0 || isNaN(expenseNumber)){
+   if(expenseNumber === 0 || isNaN(expenseNumber)){
         const customAlert = document.querySelector('.alertAmount');
         customAlert.style.display = 'block'; // Show the custom alert
 
-    } else{
-                customAlert.style.display = 'none'; // Show the custom alert
-
-    }
+    } 
 });
+

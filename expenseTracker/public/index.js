@@ -39,20 +39,32 @@ expenseButton.addEventListener('click', () => {
   // Get the budget display
   const totalBudget = document.getElementById('amount');
 
-  // Perform the subtraction for remaining budget
-  if (parseFloat(remainingBudget.innerText) > 0) {
-    remainingBudget.innerText = parseFloat(remainingBudget.innerText) - newExpense;
-  } else {
-    remainingBudget.innerText = parseFloat(totalBudget.innerText) - newExpense;
-  }
+// Store the remaining budget as a variable
+let remainingBudgetValue = parseFloat(remainingBudget.innerText);
 
-  // Add the new expense to the total expense
-  totalExpense += newExpense;
+// Perform the subtraction for remaining budget
+if (remainingBudgetValue > 0) {
+  remainingBudgetValue -= newExpense;
+} else {
+  remainingBudgetValue = parseFloat(totalBudget.innerText) - newExpense;
+}
 
-  // Update the total expense display
-  const expenseFull = document.getElementById('total_expense');
-  expenseFull.innerText = totalExpense;
+// Update the remaining budget display
+remainingBudget.innerText = remainingBudgetValue;
 
+// Check if remaining budget is 0 and provide a warning
+if (remainingBudgetValue === 0) {
+  // Disable the "Add Expense" functionality or show a message to the user
+  // instead of using an alert
+  window.alert("Warning: Your budget is 0");
+}
+
+// Add the new expense to the total expense
+totalExpense += newExpense;
+
+// Update the total expense display
+const expenseFull = document.getElementById('total_expense');
+expenseFull.innerText = totalExpense;
   // Get the product title
 const productTitle = document.getElementById('product-title');
 
