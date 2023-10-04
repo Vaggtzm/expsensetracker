@@ -2,35 +2,85 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins" , sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     background-color: #f7f9fd;
+    color: #333;
 }
- body.dark{
-    background-color: #000000;
-     color: white;
- }
 
-#list{
-    background-color:#333;
-    color: white;
+body.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.navbar a.navbar-brand {
+    color: #f7f9fd;
+    font-weight: 600;
+}
+
+.form-container, .form-input {
+    background-color: #fff;
+    border: 1px solid #e1e5ea;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border-radius: 6px;
+    border-color: #e1e5ea;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007BFF;
+    box-shadow: none;
+}
+
+button.btn {
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bi-arrow-left-right {
+    font-size: 3rem;
+    color: #007BFF;
+}
+
+.listBox {
+    background-color: #f3f7fc;
+    border-radius: 20px;
+    overflow-y: scroll;
     padding: 1rem;
-    max-height: 100px; /* Adjust the height as per your design */
-    overflow-y: auto;
-
-}
-/*css alert*/
-.alertBudget {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 4px;
-    display: none;
 }
 
+.listBox .list {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-#CurrentBudget{
-    margin-inline: 2rem;
+h4, h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+.text-muted {
+    color: #7d8491 !important;
 }
